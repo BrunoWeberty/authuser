@@ -1,0 +1,2 @@
+package com.ead.authuser.specifications;public class SpecificationTemplate {
+}
