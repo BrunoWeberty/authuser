@@ -1,2 +1,4 @@
-package com.ead.authuser.services;public interface RoleService {
+package com.ead.authuser.services;
+
+public interface RoleService {
 }
