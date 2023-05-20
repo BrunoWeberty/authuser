@@ -71,6 +71,7 @@ public class UserController {
         }
     }
 
+    @PreAuthorize("hasAnyRole('ADMIN')")
     @DeleteMapping("/{userId}")
     public ResponseEntity<Object> deleteUser(@PathVariable(value = "userId") UUID userId) {
         log.debug("DELETE deleteUser userId received {}", userId);
@@ -85,6 +86,7 @@ public class UserController {
         }
     }
 
+    @PreAuthorize("hasAnyRole('ADMIN')")
     @PutMapping("/{userId}")
     public ResponseEntity<Object> updateUser(@PathVariable(value = "userId") UUID userId,
                                              @RequestBody @Validated(UserDto.UserView.UserPut.class)
@@ -106,6 +108,7 @@ public class UserController {
         }
     }
 
+    @PreAuthorize("hasAnyRole('STUDENT')")
     @PutMapping("/{userId}/password")
     public ResponseEntity<Object> updatePassword(@PathVariable(value = "userId") UUID userId,
                                                  @RequestBody @Validated(UserDto.UserView.PasswordPut.class)
@@ -128,6 +131,7 @@ public class UserController {
         }
     }
 
+    @PreAuthorize("hasAnyRole('STUDENT')")
     @PutMapping("/{userId}/image")
     public ResponseEntity<Object> updateImage(@PathVariable(value = "userId") UUID userId,
                                               @RequestBody @Validated(UserDto.UserView.ImagePut.class)
